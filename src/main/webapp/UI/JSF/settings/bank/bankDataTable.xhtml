@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:rich="http://richfaces.org/rich">
+<body>
+	<ui:composition>
+	      <h:form id ="footerForm">
+		<center>
+			<a4j:outputPanel id="bankFormOutputPanel">
+				<fieldset id="bankFormFiledSet2" class="formfieldset">
+					<legend id="bankForm-lg2">
+						<h:outputLabel id="bank"
+							value="#{label.banks}" />
+					</legend>
+
+
+					<rich:dataTable id="bankForm-datatable1" var="t" 
+						value="#{bank.dataTableList}" align="center"
+						columnsWidth="0" rows="5">
+						<f:facet name="header">
+							<h:outputText value="#{msg.SOATitle}" />
+						</f:facet>
+
+
+						<rich:column id="bankForm-datatable1-col1">
+							<f:facet name="header">
+								<h:outputText id="soa69" value="#{label.bankName}" />
+							</f:facet>
+							<h:outputText id="soa70" value="#{t.name}" />
+							<f:facet name="footer">
+								<h:outputText id="soa71" value=" " />
+							</f:facet>
+						</rich:column>
+
+						<rich:column id="soa72">
+							<f:facet name="header">
+								<h:outputText id="soa73" value="#{label.bankAddress}" />
+							</f:facet>
+							<h:outputText id="soa74" value="#{t.address}" />
+							<f:facet name="footer">
+								<h:outputText id="soa76" value=" " />
+							</f:facet>
+						</rich:column>
+
+						<rich:column id="soa77">
+							<f:facet name="header">
+								<h:outputText id="soa78" value="#{label.swiftCode}" />
+							</f:facet>
+							<h:outputText id="soa79" value="#{t.swiftCode}" />
+							<f:facet name="footer">
+								<h:outputText id="soa80" value=" " />
+							</f:facet>
+						</rich:column>
+						
+						<rich:column id="soa771">
+							<f:facet name="header">
+								<h:outputText id="soa781" value="#{label.bankCountry}" />
+							</f:facet>
+							<h:outputText id="soa791" value="#{t.country.countryEnglishName}" />
+							<f:facet name="footer">
+								<h:outputText id="soa801" value=" " />
+							</f:facet>
+						</rich:column>
+						
+
+
+
+						<rich:column id="soa85">
+							<f:facet name="header">
+								<h:outputText id="soa86" value="Operations" />
+							</f:facet>
+							 <!--a4j:commandLink ajaxSingle="true" id="editlink"
+                        oncomplete="#{rich:component('editPanel')}.show()">
+                        <h:graphicImage value="/images/icons/edit.gif" style="border:0" />
+                        <f:setPropertyActionListener value="#{t}"
+                            target="#{dataTableScrollerBean.currentItem}" />
+                        <f:setPropertyActionListener value="#{row}"
+                            target="#{dataTableScrollerBean.currentRow}" />
+                    </a4j:commandLink-->
+                    
+                    <!--a4j:commandButton id="button"  value="Edit" status="waitingStatus"
+                         actionListener="#{bank.currentRow}" immediate="true" style="width:70px;">
+                    <f:setPropertyActionListener value="#{row}"
+                         target="#{bank.currentRow}" />
+               </a4j:commandButton-->
+			   <h:commandButton id="bankFormEditButton" value="#{label.edit}" immediate="true"  action="#{bank.editBankToUpdate}" >
+            <f:setPropertyActionListener target="#{bank.currentRow}" immediate="ture" value="#{t}"/>
+        </h:commandButton>
+        
+        
+        
+        <h:commandButton id="bankFormDeleteButton" value="#{label.delete}" immediate="true"  action="#{bank.editBankToDelete}" >
+            <f:setPropertyActionListener target="#{bank.currentRow}" immediate="ture"  value="#{t}"/>
+        </h:commandButton>		
+				
+							<f:facet name="footer">
+								<h:outputText id="soa88" value=" " />
+							</f:facet>
+						</rich:column>
+
+
+						
+
+
+					</rich:dataTable>
+					<rich:dataScroller id="datascroller" for="bankForm-datatable1" />
+					<!--rich:spacer id="stateofacc-spacer3" height="1" />
+					<rich:collapsibleSubTable id="stateofacc-spacer3" height="1" /-->
+
+				</fieldset>
+			</a4j:outputPanel>
+		</center>
+           </h:form>
+
+	</ui:composition>
+</body>
+</html>

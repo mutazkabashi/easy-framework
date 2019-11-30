@@ -1,0 +1,775 @@
+/****
+Libra Home CSS - home.css clean
+$Revision: 1.3 $
+. html element initialization
+. standard html styles
+. base structure styles
+. framework banner styles
+. libra specific styles
+. site area nav styles
+. package: basic text formatting for flydown menus      
+. showcase styles     
+. web module segment styles
+. footer styles
+
+****/
+
+/***
+--------------------------- 
+HTML Element Initialization
+---------------------------
+. reset HTML Elements
+***/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}ol,ul {list-style:none;}caption,th {text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;}q:before,q:after{content:'';}
+
+
+/***
+-------------------- 
+Standard Html Styles
+--------------------
+. defines font, font size, and link styles 
+. migrated from legacy.css to framework
+. recycled from btx
+***/
+
+body#libra {
+  margin: 0 5px 0 3px;
+  font:80.5% arial,helvetica,sans-serif; /* Sets base */
+  color:#000;
+  background-color:#fff;
+  }
+  * html body#libra { 
+    font:80% arial,helvetica,sans-serif; /* IE6 reset */
+    width:98.9%; 
+    } 
+
+
+a:link { color:#039; width:100%}
+a:hover { background-color:orange;}
+a:visited { color:#639; }
+
+.skiplinks {
+  visibility:hidden; /* NS7 */
+  display:none;
+  }
+
+/*** 
+---------------------
+Base Structure Styles
+---------------------
+. primarily defines framework table structure 
+. legend:
+     base-main     : outter table - contains tds: column left, column center
+     column-main   : inner td     - contains div: content-main
+     content-main  : inner div    - contains actual content
+***/
+
+#home-banner,
+#home-wrapper { width:797px; }
+
+#home-main {
+  width:100%;  
+  border:0;
+  border-collapse:separate;
+  empty-cells:hide;
+  vertical-align:top;
+  height:350px; 
+  }
+
+#home-column-main,
+#home-column-right { vertical-align:top; }
+
+#home-column-main { width:100%; }
+
+#home-content-main { margin:8px 8px 0 0; }
+
+
+/***
+-----------------------
+Framework Banner Styles
+-----------------------
+. relative positioned (sits along top, regardless of where its served on linearized page).
+. Banner includes: logo, secondary-navigation, and search.
+. legend:
+     region-selector : worldwide
+***/
+
+#home-header {
+  overflow:visible;
+  height: 72px;
+  text-align:left; 
+  }
+
+#home-logo {
+  position:absolute;
+  top:0;
+  left:0;
+  height:72px;
+  z-index:10; /* Moz logo active */
+  }
+
+#home-header .nav-secondary {
+  margin-right:-1px; 
+  padding:12px 0 0 10px; 
+  height:25px;
+  font-size:86%; 
+  color:#666; 
+  background-color:transparent; 
+  white-space:nowrap;
+  }
+
+.nav-secondary .region-selector { margin:0 26px 0 90px; }
+
+.nav-secondary .region-selector span.region,
+.nav-secondary .region-selector span.language { font-weight:bold; }
+
+.nav-secondary .region-selector .language-selector { padding-left:4px; }
+
+#home-header .nav-secondary a, 
+#home-header .nav-secondary a:visited {
+  color:#2f6681; 
+  background-color:transparent;
+  text-decoration:none;
+  font-weight:normal;
+  }
+
+#home-header .nav-secondary a:hover, #home-header .nav-secondary a:active { text-decoration:underline; }
+
+#home-header .nav-secondary .link-delimiter { padding:0 7px 0 4px; }
+#home-header .nav-secondary a.login, 
+#home-header .nav-secondary a:visited.login,
+#home-header .nav-secondary .loggedin {
+  font-weight:bold;
+  }
+
+/* Hide */
+#home-header .search-entitlement,
+#home-header .search label {
+  visibility:hidden; /* NS7 */
+  display:none;
+  }
+
+#home-header .search {
+  float:right; 
+  height:22px; 
+  }
+
+#home-header #searchPhrase { 
+  float:left; 
+  margin-right:-1px;
+  padding:1px 0 2px 3px; 
+  height:100%; /* Moz text-box resize */
+  width:250px;
+  border:1px solid #ccc; 
+  border-top:2px solid #999;
+  border-left:2px solid #999;
+  font-size:100%; /* IE text-box resize */
+  }
+
+#home-header .search #go { 
+  float:left;
+  height:22px;
+  width:31px;
+  }
+
+
+/*** 
+---------------------
+Libra Specific Styles
+---------------------
+. generic round corners
+. added 09/01/06
+***/
+
+/*** Generic Rounded Corner Module Declaration ***/
+.corner-top, .corner-left, .corner-bottom {
+  position:relative; /* req */
+  background-image: url(/swa/i/cr_def.gif);
+  background-repeat:no-repeat;
+  display:block;
+  font-size:0;
+  height:3px;
+  }
+
+.corner-top {
+  background-position:100% 0;
+  width:auto;
+  top:-1px;
+  right:-1px;
+  }
+
+.corner-top .corner-left {
+  background-position:0 -6px;
+  width:3px;
+  left:-2px;
+  }
+
+.corner-bottom {
+  background-position:100% -3px;
+  clear:both;
+  width:auto;
+  bottom:-1px;
+  right:-1px;
+  }
+
+.corner-bottom .corner-left {
+  background-position:0 -9px;
+  width:3px;
+  left:-2px;
+  }
+
+.cdc-rc-container {
+  border:1px solid #ccc;
+  width:auto;
+  }
+
+.side {
+  border:1px solid #aeaeae;
+  border-top:0;
+  }
+
+/*** 
+---------------------------
+Site Area Navigation Styles
+---------------------------
+. features overrides to generic rounded corners css 
+. defines border and the corners. 
+. content to define height & keep the corner positioning correct 
+. legend:
+    cdc-nav-module : wrapper div
+    nav-container  : table
+    nav            : table column cells
+***/
+
+#cdc-nav-module {
+  position:relative;
+  margin-top:1px;
+  background:url(/swa/i/sitearea-nav.jpg) repeat-x top left;
+  z-index:10;  /* req: flydowns */
+  }
+  /* IE requires height. FF1.0 takes literally */
+  * html #cdc-nav-module { height:1%; }
+
+#cdc-nav-module .nav-container  {
+  margin-top:-3px; 
+  width:795px;
+  }
+  /* IE6 moves flydown 1 pixel down to not overlap nav */    
+  * html #cdc-nav-module .nav-container { margin-bottom:-1px; }
+
+#cdc-nav-module .nav { 
+  padding:6px 7px 6px 8px;
+  border-left:1px solid #ccc;  
+  }
+  /* IE hover alternative */
+  * html #cdc-nav-module .nav {
+  behavior: expression( 
+    this.onmouseenter=new Function("this.className+=' hover'"),
+    this.onmouseleave=new Function("this.className=this.className.replace(' hover','')"),
+    this.style.behavior=null);
+    } 
+
+#cdc-nav-module .lastnav { border-left:0 solid #ccc; }
+
+#cdc-nav-module .nav:hover, #cdc-nav-module .hover {
+  background:url(/swa/i/sitearea-nav.jpg) repeat-x 0 -100px; 
+  }
+
+#cdc-nav-module .nav a {
+  display:block;
+  padding:0; /* req */
+  height:auto; /* req: min auto. Not 100% */
+  color:#2f6681; 
+  background-color:transparent;
+  font-size:90%;
+  line-height:1.13em; /* equiv: 4px line-height; */
+  font-weight:bold;
+  text-align:center;
+  text-decoration:none;
+  }
+
+#cdc-nav-module .nav:hover a,
+#cdc-nav-module .hover a { color:#027ac6;background-color:orange; width:100%; }
+
+
+/***
+----------------------------------------
+Package: Basic text formatting for menus            
+----------------------------------------
+ . Change colors, fonts, borders, etc.
+***/
+
+.menuFrame {
+  overflow:hidden; 
+  position:absolute;
+  display:none;
+  /* IE require -1px top to remove doubleline with flydown, 
+     Safari is couple pixels off  */
+  %margin-top:-1px; 
+  }
+  * html .menuFrame { margin-left:1px; } /* req: IE 6 extra 1 pixel margin */
+
+.menu {
+  position:relative;
+  width:100%;
+  height:100%;
+  border:1px outset;
+  border-top-width:0; 
+  font-size:86.6%;
+  }
+
+.menu li {
+  display:inline; 
+  %margin-bottom:-1px; /* IE has 1 extra pixel at top of each li */
+  }
+  * html body .menu li {
+    behavior: expression( 
+      this.onmouseenter=new Function("this.className+=' subhover'"),
+      this.onmouseleave=new Function("this.className=this.className.replace(' subhover','')"),
+      this.style.behavior=null); 
+    }
+
+.menu a:link, .menu a:visited {
+  line-height:108%;
+  color:#2f6681;
+  padding:2px 10px 3px;
+  text-decoration: none;
+  border-top:1px solid #d5e0e6;
+  border-right:1px solid #c9cbcd;
+  display:block;
+  background:url(/swa/i/sitearea-nav-bg.png) repeat-x;
+  width:185px;
+  }
+  * html .menu li a:link, * html .menu li a:visited {
+    background:none;
+    background-color:#fff;
+    filter:alpha(opacity=97); /* req: IE 6 & 7, ignored by rest */
+    }
+  * html .menu li a:hover {
+    background-color:#d5e0e6;
+   
+    filter:alpha(opacity=97); /* req: IE 6 & 7, ignored by rest */
+    }
+
+.menu a:hover, .menu .subhover {
+  display:block;
+  background-position:0 -250px; 
+  }
+
+.link-group { font-weight:bold; }
+
+.menu .link-group a:link, .menu .link-group a:visited,
+.menu .link-group a:hover, .menu .link-group a:active { 
+  border-top:1px solid #acc2cd; 
+  border-right:1px solid #c9cbcd;
+  font-weight:bold !important; 
+  }
+
+#solutionsFrame { %margin-left:-1px; } /* IE 7 positioning offset */
+  * html #solutionsFrame { margin-left:0; } /* restore IE 6 position */
+
+/* Partner menu opens inwards */
+#partnerFrame { 
+  margin-right:-1px; /* FF Fix. */
+  left:588px !important; 
+  }
+  * html #partnerFrame { 
+    left:587px !important; 
+    width:201px; 
+    } 
+    
+
+/*
+---------------------------------
+Showcase Styles
+---------------------------------
+ . News Parcel
+ . Featured Product Parcel
+*/
+
+.showcase {
+  margin:10px 0 2px; 
+  width:296px;
+  float:left;
+  font-size:86%;
+  color:#666;
+  background:url(/swa/i/home_corners.gif) no-repeat;
+  background-position:-296px bottom;
+  }
+
+.showcase .showcase-bottom {
+  position:relative; /*  req */
+  background:url(/swa/i/home_corners.gif) no-repeat;
+  margin-top:0;
+  padding:1px 0 5px;
+  min-height:182px; /* req: IE7 */
+  }
+  * html .showcase-left .showcase-bottom { 
+    height:182px;
+    }
+
+.showcase .parcel-content {
+  margin-top:4px;
+  padding:0 8px 7px 8px;
+  border-left:1px solid #ccc;
+  border-right:1px solid #ccc;
+  }
+
+.showcase-left .parcel-content {
+  min-height:172px; 
+  }
+  * html .showcase-left .parcel-content { 
+    height:173px;
+    }
+
+.showcase h2 {
+  padding:7px 0 9px 6px;
+  line-height:1em;
+  font-size:142%;
+  font-weight:bold;
+  }
+
+.showcase li { 
+  color:#666;
+  line-height:13px;
+  padding-left:7px;  
+  }
+
+.showcase img { margin-bottom:-1px; }
+
+* html .showcase-left .parcel-content ul { 
+  position:relative;
+  }
+
+.showcase-left .parcel-content li { 
+  display:block; 
+  background:url(/swa/i/dotted.gif) repeat-x; 
+  }
+
+.showcase-left .parcel-content .outer { 
+  height:38px; 
+  %height:100%; /* req: IE7 */
+  %min-height:38px; /* req: IE7 */
+  display:table; 
+  position:static; 
+  }
+  * html .showcase-left .parcel-content .outer { 
+    height:38px; /* reset: IE6 */
+    position:relative; 
+    }
+
+.showcase-left .parcel-content .middle { 
+  display:table-cell; 
+  vertical-align:middle; 
+  width:270px;  
+  padding:0px 0 5px; 
+  %position:relative; 
+  %top:0%; 
+  %padding:6px 0; 
+  }
+
+.showcase-left .parcel-content .inner { 
+  %position:relative; 
+  %top:-50%; 
+  }
+
+.showcase-right { float:right; }      
+
+.showcase-right h2 {
+  padding-bottom:10px;
+  background:url(/swa/i/dotted.gif) repeat-x bottom;
+  }
+
+.showcase a:link, .showcase a:visited {
+  color:#2f6881;
+  text-decoration:none;
+  }   
+.showcase a:hover, .showcase a:active {
+  text-decoration:underline;
+  }
+
+.showcase h3 {
+  font-size:130%;
+  font-weight:normal; /* default is bold */
+  padding:1px 0 4px;
+  }    
+
+.showcase .link-more { font-weight:bold; }
+
+.showcase div.link-more {
+  line-height:1em;
+  padding:6px 0 5px; 
+  }
+
+.link-all {
+  clear:both;
+  display:block;
+  font-weight:bold;
+  padding-left:5px;
+  padding-top:12px;
+  background:url(/swa/i/dotted.gif) repeat-x;
+  }
+
+/* Alert Component */
+.alert-container {
+  position:relative;
+  border:1px solid #d9c89e;
+  display:table; /* FF only */
+  margin-bottom:-1px;
+  width:275px;
+  background:url(/swa/i/home_security-bg.gif);
+  }
+
+.alert-icon-container {
+  position:relative;
+  display:table-cell; /* FF only */
+  width:43px;
+  text-align:center;
+  vertical-align:middle;
+  }
+  /* override: IE. Compensation for lack of display:table support */
+  .alert-icon-container {
+    %position:absolute;
+    %float:left;
+    %top:50%;
+    }
+
+.alert-content { 
+  position:relative; 
+  width:210px;
+  line-height:13px;
+  padding:6px 8px 5px;
+  border-left:1px solid #d9c89e;
+  }
+  .alert-content {
+    %left:45px;
+    }
+
+.alert-icon {
+  position:relative;            
+  %top:-13px; /* req: IE7 needs to be half of image height */
+  }
+  * html .alert-icon {
+    top:-50%;  /* reset IE6 */
+    }
+
+#product-intro {
+  margin-top:9px;
+  padding-left:5px;
+  padding-bottom:5px;
+  min-height:99px;
+  }
+  /* min-height equivalent */
+  * html #product-intro {
+    height:99px; 
+    }
+
+#product-intro .product-img {
+  text-align:center;
+  }  
+
+#product-intro .product-img-vert {
+  float:left;
+  top:-4px;
+  padding-right:8px;
+  } 
+  /* IE 3px Float Margin Bug Fix (Fix messes up Safari 2.0 but is ignored by FF) */ 
+  * html #product-intro .product-img-vert .product-content {
+    display:inline-block; 
+    }  
+
+
+/*
+-------------------------
+Web Module Segment Styles
+-------------------------
+ . info (links)
+ . quicklinks
+ . (software) downloads
+ . opt-parcel
+*/
+
+/* All Modules */
+.side-parcel {
+  background:#fff url(/swa/i/home_corners.gif) no-repeat -781px bottom;
+  margin:8px 0 1px;
+  padding-bottom:1px;
+  width:189px;
+  }
+
+.side-parcel h3 {
+  background:#aeaeae url(/swa/i/home_corners.gif) no-repeat -592px 0px;
+  padding:5px 10px 4px;
+  color:#fff;
+  font-weight:bold;
+  font-size:85%;
+  line-height:1em;
+  }
+
+.side-parcel ul {
+  padding:9px 0 3px 10px; 
+  line-height:101%; /* sync IE and FF line-height */
+  }
+
+.side-parcel li {
+  display:block;
+  padding:0 0 5px;
+  }
+
+.side-parcel ul,
+.nojs, .js {
+  border-left:1px solid #aeaeae;	
+  border-right:1px solid #aeaeae;	
+  font-size:85%;
+  }
+
+.side-parcel div.selectBox a {
+  display:block;
+  width:153px;
+  min-height:14px; /* req: mac */
+  padding:2px 6px 1px;
+  border:1px solid #aeaeae;
+  background:url(/swa/i/dd-arrow.gif) no-repeat 149px 1px;
+  text-decoration:none; 
+  }
+.side-parcel div.selectBox a:link, 
+.side-parcel div.selectBox a:visited { 
+  color:#666;
+  text-decoration:none;
+  }
+
+div.selectBox a:hover, 
+div.selectBox a:visited { text-decoration:none; }
+
+#quicklinks, #downloads {
+  display:none;
+  position:absolute;
+  top:-1px;
+  width:165px;
+  background-color:#fff;
+  border:1px solid #aeaeae;
+  margin-bottom:8px; 
+  }
+
+.optionsBox { position:relative; }
+
+.optionsBox ul{ 
+  border:0; /* offset: double borders on left and right sides */
+  width:153px;
+  padding:3px 0; 
+  }
+
+.optionsBox li { display:inline; }
+
+.optionsBox li a:hover { 
+  text-decoration:none; 
+  background-color:#d5e0e6; 
+  }
+
+.optionsBox li a:link, .optionsBox li a:visited { 
+  display:block; 
+  width:100%;
+  color:#666; 
+  margin:0; 
+  padding:2px 6px 1px;
+  }
+  * html .optionsBox li a:link, * html .optionsBox li a:visited { 
+    font-size:110%; 
+    }
+
+.optionsBox li a:link.link-group, .optionsBox li a:visited.link-group { font-size:120%; }
+
+#quicklinks-js {
+  display:none;
+  margin-top:-2px;
+  padding:0 10px 10px;
+  }
+  * html #quicklinks-js { padding-left:11px; } 
+   
+#quicklinks-nojs {
+  font-weight:bold;
+  margin-top:-1px;
+  padding:0 10px 7px;
+  }
+  * html #quicklinks { margin-left:-1px; } /* 1px discrepency only with QL*/
+  
+#downloads-js {
+  display:none;
+  padding:7px 10px;
+  }
+
+#downloads-nojs {
+  font-weight:bold;
+  padding:8px 10px; 
+  }
+
+.side-parcel a:link, .side-parcel a:visited,
+#downloads-nojs a:link, #downloads-nojs a:visited {
+  text-decoration:none;
+  color:#2f6681;
+  }
+
+.side-parcel a:hover, .side-parcel a:active,
+#downloads-nojs a:hover, #downloads-nojs a:active { text-decoration:underline; }
+
+.opt-parcel { margin-top:8px; } 
+
+/* Alternative Settings */
+.no-rc h3 {
+  padding-top:5px;
+  background-image:none;
+  }
+
+.alt-color    { background-color:#efefef; }
+
+.alt-links ul { padding:5px 0 1px 10px; }
+
+.alt-links li {
+  display:block;
+  list-style:none;
+  margin:4px 0 2px -5px;
+  line-height:1em;
+  padding-left:15px;
+  background:url(/swa/i/chevrons.gif) no-repeat 3% 25%;
+  }
+
+.alt-links a:link, .alt-links a:visited { font-weight:bold; }
+
+
+/***
+--------------------
+Footer Styles
+--------------------
+. defines styles for: text/link, copyright, legal
+***/
+
+#home-footer {
+  padding:25px 0 0 15px; 
+  font-size:86%; /* Set font smaller than normal */
+  color:#333; 
+  line-height:13px;
+  }
+  * html #home-footer { padding-top:26px; } /* offset: IE6 1px less above footer */
+
+#home-footer a, #framework-footer a:visited {
+  color:#2f6681; 
+  background-color:transparent; 
+  text-decoration:none;
+  }
+
+#home-footer a:hover, #home-footer a:active { text-decoration:underline; }
+
+#home-footer #footer-copyright {
+  padding-right:7px; 
+  float:left;
+  }
+
+#home-footer #footer-legal {
+  white-space:nowrap;
+  float:left;
+  padding-bottom:18px;
+  }
+  * html #home-footer #footer-legal {
+    padding-bottom:17px;  /* offset: IE 1 px larger */
+    }
+ 

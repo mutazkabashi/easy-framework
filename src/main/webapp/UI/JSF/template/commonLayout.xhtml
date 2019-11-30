@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+ 
+    <h:head>
+    <title><h:outputText value="#{label.header}" /></title>
+
+
+  <meta content="text/html;charset=UTF-8" http-equiv="Content-type" />
+
+  <link href="../JavaScript/home.css" type="text/css" rel="stylesheet" />
+
+  <script type="text/javascript" src="../JavaScript/home.js"></script>
+  <!-- <style type="text/css">.menuFrame{display:block;}</style>
+  <style type="text/css">.menuFrame{visibility:hidden;}</style>-->
+  <style type="text/css">
+
+#cdc-nav-module .nav { padding-left:28px; padding-right:27px;background-color:rgb(2, 166, 242);font:white; }
+  </style>
+
+<!-- image script -->
+<script type="text/javascript">
+<!--
+/* define image width and height */
+
+var pic_width=600;
+var pic_height=300;
+
+/* define image urls */
+
+if (document.images)
+ {
+     pic1= new Image(pic_width,pic_height);
+     pic1.src="http://localhost/newsite/images/i11.png";  
+     pic2= new Image(pic_width,pic_height); 
+     pic2.src="http://localhost/newsite/images/i2.jpg"; 
+     pic3= new Image(pic_width,pic_height);
+     pic3.src="http://localhost/newsite/images/i3.jpg";  
+     pic4= new Image(pic_width,pic_height);
+     pic4.src="http://localhost/newsite/images/i4.jpg";  
+     pic5= new Image(pic_width,pic_height);
+     pic5.src="http://localhost/newsite/images/i5.gif"; 
+ }    
+
+/* define text for image captions  */
+
+var destext= new Array(5)
+    destext[0]="This caption for image 1";
+    destext[1]="This caption for image 2";
+    destext[2]="This caption for image 3";
+    destext[3]="This caption for image 4";
+    destext[4]="This caption for image 5";
+ 
+var pics= new Array(5) 
+   pics[0]=pic1.src;
+   pics[1]=pic2.src;
+   pics[2]=pic3.src;
+   pics[3]=pic4.src;
+   pics[4]=pic5.src; 
+
+var numpics=5;
+var thenum=0;
+imgName="img1";
+
+function change_it()
+ {
+   if (document.images)
+    {
+      document.write("<a href=\"\" ><img width=\"100%\" src='"+pics[thenum]+"' border='0' width='"+pic_width+"' height='"+pic_height+"' name='img1'> </a> \n");
+      //document.write("<p><form name='form1' id='form1'><textarea name='text1' id='text1' rows='5' cols='20'>"+destext[thenum]+"</textarea></form>");
+      setTimeout('change_it2()',3000);  
+   }
+}
+
+function change_it2()
+{
+  var x=0;
+  thenum+=1;
+
+  if (thenum>numpics-1)
+    thenum=0;
+
+  document[imgName].src=pics[thenum];
+  //document.form1.text1.value=destext[thenum];
+  x+=1;
+  setTimeout('change_it2()',3000);
+}
+//-->
+</script>
+
+<!-- image script C -->
+
+
+	<!--h:outputStylesheet name="common-style.css" library="css" /-->
+    </h:head>
+ 
+    <h:body id="libra">
+    
+    <center>
+<div style="height: 150px; width: 800px;" >
+
+
+&nbsp;&nbsp;	
+ 
+	<!--div id="page">
+           
+	    <div id="header"-->
+	    
+	    <ui:insert name="headerLogo" >
+		  <ui:include src="commonHeaderLogo.xhtml" />
+		</ui:insert>
+		<ui:insert name="header" >
+		  <ui:include src="commonHeader.xhtml" />
+		</ui:insert>
+	    </div>
+	    <!--/div-->
+          <br />
+          <br />
+	    <div id="content" style="font-family: tahoma;color: #000000; width: 800px;">
+	  	<ui:insert name="content" >
+	 	  <ui:include src="commonContent.xhtml" />
+	   	</ui:insert>
+	    </div>
+         <br />
+         <br />
+	    <div id="footer">
+	    	<ui:insert name="footer" >
+	    	  <ui:include src="commonFooter.xhtml" />
+	    	</ui:insert>
+    	    </div>
+    	    </center>
+      
+       
+ 
+    </h:body>
+    </html>

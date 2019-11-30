@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:rich="http://richfaces.org/rich"
+      >
+    <h:body>
+ 
+    	<ui:composition template="../../template/commonLayout.xhtml">
+    	
+    	<ui:define name="content">
+    	      
+    			<h:form id="bankForm">
+				 <a4j:outputPanel id="out">
+				 <a4j:outputPanel id="bankFormOutputPanelMsg1">
+                <h:outputText id="bankFormOperationMsg" value="#{bank.msg}" style="color:red" />
+                </a4j:outputPanel>
+				 </a4j:outputPanel>
+    			
+    			<!--a4j:region-->
+    			<fieldset>
+    			<legend id="stateofacc-lg3">
+						<h:outputLabel id="stateofacc-headertitle4"
+							value="#{label.bankInfo}" />
+					</legend>
+				 
+    			<h:panelGrid id="bankFormPg" columns="5"  >
+    			<h:outputText id="bankNameLabel" value="#{label.bankName} :" />
+    			<h:outputText id="bankNameValue"  value="#{bank.cP.name}"  /> 
+    			
+    			<h:outputText value="|" />
+    			<h:outputText id="bankAddressLabel" value="#{label.bankAddress} :" />
+    			<h:outputText id="bankAddressValue"  value="#{bank.cP.address}" /> 
+    			
+    			
+    			<h:outputText id="swiftCodeLabel" value="#{label.swiftCode} :" />
+    			<h:outputText id="swiftCodeValue"  value="#{bank.cP.swiftCode}"  /> 
+    			
+    			<h:outputText id="countryLabel" value="#{label.bankCountry} :" />
+    			<h:selectOneMenu  id="countryCodeValue"  value="#{bank.cP.countryId}">
+    		    <f:selectItem  id="countriesddMenu"  itemLabel="Select a Country"/>
+    		    <f:selectItems value="#{bank.dropDownMenu}"></f:selectItems>
+    		    </h:selectOneMenu> 
+    			
+    			
+    			</h:panelGrid>
+    			</fieldset>
+    			<center>
+    			
+				
+				<a4j:status name="waitingStatus">
+         <f:facet name="start">
+            <h:graphicImage value="../../images/loading.gif" />
+         </f:facet>
+      </a4j:status>
+				<br />
+    			<fieldset>
+    			<h:panelGrid columns="2">
+    			<a4j:commandButton id="companyDeleteFormSaveButton"
+								value="#{label.bankConfirmButton}" status="waitingStatus" execute="@form"
+								action="#{bank.deleteBank}" render="bankForm" />
+    			<a4j:commandButton id="bankFormNewButton" immediate="true" value="#{label.bankNewButton}" status="waitingStatus" execute="@form" action="#{bank.New}" render="bankForm"/>
+    			</h:panelGrid>
+    			</fieldset>
+    			</center>
+    			<!--/a4j:region-->
+    			
+    			<br />
+    			<br />
+    			<br />
+    			<ui:insert name="bankDataTable" >
+		  <ui:include src="bankDataTable.xhtml" />
+		</ui:insert>
+    			
+    			</h:form>
+    			
+    			
+    		</ui:define>
+ 
+    	</ui:composition>
+ 
+    </h:body>
+ 
+</html>

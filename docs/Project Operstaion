@@ -1,0 +1,16 @@
+Project opertaions
+
+1-opening project
+ As a User , i can open a new Project, so that Customer can Order Parts/items
+  
+  - user should fill new project form fields 
+     (
+      project Name [automatically by the system]
+      Project Open Date
+      Project Close Date
+      Project Status [New by the system] 
+      )
+  
+  - System Should Check Forms fileds to make sure that they r filled correctly
+  
+  - User should click on save Button to save Form data in the System data base 

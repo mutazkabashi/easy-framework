@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+<body>
+	<ui:composition>
+
+
+
+
+
+
+		
+
+
+		<br></br>
+		<br></br>
+		<br></br>
+
+		<div id="home-wrapper" style="width: 700px;">
+
+			<!--table id="home-wrapper" summary="" border="0" cellpadding="0" cellspacing="0">
+
+  <tbody>
+
+    <tr>
+
+      <td>
+      
+      
+     <div  style="z-index:200; left:0px;border: 0px none ; margin-top: 10px; height: 20px;">  <br/>
+       
+       
+    <script type="text/javascript">var dmWorkPath = "menu.files/";</script>
+    <script type="text/javascript" src="menu.files/dmenu.js"></script>
+
+    
+      <table summary="" class="nav-container" style="z-index: 200;"   cellpadding="0" cellspacing="0" width="98%">
+
+        <tbody>
+
+          <tr><td align="left" width="100%" bgcolor="#58a3ee">
+          
+     <script type="text/javascript" src="menu11.js"  ></script></td>
+    
+    </tr>
+    
+    </tbody>
+    </table-->
+
+
+
+			<!--style>
+.pic {
+	margin-bottom: -4px;
+	margin-right: 2px;
+}
+
+.search .rich-menu-item-hover {
+	background-color: transparent;
+	border-color: transparent;
+}
+</style-->
+
+   <h:form>
+<rich:toolbar >
+<rich:dropDownMenu mode="ajax" label ="Settings">
+<rich:menuItem submitMode="client"
+                    onclick="document.location.href='http://localhost:8080/logestic/UI/JSF/settings/company/addcompany.xhtml'">
+                    <h:outputText value="Company" />
+
+</rich:menuItem>
+<rich:menuItem submitMode="client"
+                    onclick="document.location.href='http://localhost:8080/logestic/UI/JSF/settings/person/addperson.xhtml'">
+                    <h:outputText value="Contact Person" />
+</rich:menuItem>					
+<rich:menuItem submitMode="client"
+                    onclick="document.location.href='http://localhost:8080/logestic/UI/JSF/settings/supplier/addsupplier.xhtml'">
+                    <h:outputText value="Supplier" />
+</rich:menuItem>
+<rich:menuItem submitMode="client"
+                    onclick="document.location.href='http://localhost:8080/logestic/UI/JSF/settings/country/addcountry.xhtml'">
+                    <h:outputText value="Country" />
+</rich:menuItem>
+<rich:menuItem submitMode="client"
+                    onclick="document.location.href='http://localhost:8080/logestic/UI/JSF/settings/currency/addcurrency.xhtml'">
+                    <h:outputText value="Currency" />
+</rich:menuItem>
+<rich:menuItem submitMode="client"
+                    onclick="document.location.href='http://localhost:8080/logestic/UI/JSF/settings/bank/addbank.xhtml'">
+                    <h:outputText value="Bank" />
+</rich:menuItem>
+
+<rich:menuItem submitMode="client"
+                    onclick="document.location.href='http://localhost:8080/logestic/UI/JSF/settings/pricelist/addpricelist.xhtml'">
+                    <h:outputText value="Price List" />
+</rich:menuItem>
+
+
+</rich:dropDownMenu>
+
+</rich:toolbar>
+<!--h:outputText value="Name" /-->
+</h:form>
+         
+		 
+			
+		</div>
+
+
+		<!--/div>
+           </td>
+           </tr>
+           </tbody></table-->
+
+	</ui:composition>
+</body>
+</html>
